@@ -1,2 +1,2 @@
 #!/bin/bash
-IFS=':' read -r -a directories <<< \"$PATH\"
+ls -l | grep ^d | wc -l 4
