@@ -1,19 +1,28 @@
-include <stdlib.h>
-#include <time.h>
-/* more headers goes there */
+#include <stdio.h>
+#include <stdlib.h> // For rand() and srand()
+#include <time.h>   // For time()
 
-/* betty style doc for function main goes there */
-int main(void)
-{
-        int n;
+int main() {
+    int n;
 
-        srand(time(0));
-        n = rand() - RAND_MAX / 2;
-        if (n > 0){
-                printf("%d is positive\n", n);}
-        else if (n == 0){
-                printf("%d is zero\n, n");}
-        else {
-                print("%d is negative\n, n");}
-        return (0);
+    // Seed the random number generator
+    srand(time(NULL));
+
+    // Generate a random number between -100 and 100
+    n = rand() % 201 - 100;
+
+    // Print the random number
+    printf("The number: %d\n", n);
+
+    // Check if the number is positive, zero, or negative
+    if (n > 0) {
+        printf("is positive\n");
+    } else if (n == 0) {
+        printf("is zero\n");
+    } else {
+        printf("is negative\n");
+    }
+
+    return 0;
 }
+
